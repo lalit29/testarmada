@@ -2,6 +2,7 @@ var Test = require("../lib/example-base-test-class");
 
 module.exports = new Test({
   "@tags": ["smoke", "web"],
+  '@disabled': true,
   
   "Load demo page": function (client) {
     client

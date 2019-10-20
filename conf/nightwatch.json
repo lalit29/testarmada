@@ -36,8 +36,8 @@
       "silent": true,
       "sync_test_names": true,
       "screenshots": {
-        "enabled": false,
-        "path": ""
+        "enabled": true,
+        "path": "reports"
       },
       "desiredCapabilities": {},
       "globals": {

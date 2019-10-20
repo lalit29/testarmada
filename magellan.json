@@ -6,6 +6,7 @@
   ],
   "reporters": [
     "testarmada-bloop"
+    
   ],
   "strategy_bail": "testarmada-magellan-early-bail-strategy",
   "profiles": {

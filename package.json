@@ -4,8 +4,8 @@
   "description": "example project for testarmada tests",
   "main": "index.js",
   "scripts": {
-    "test": "DPRO=local ./node_modules/.bin/magellan --local_browsers chrome,firefox --test tests/demo-simple.js",
-    "test:desktop": "DPRO=local ./node_modules/.bin/magellan --local_browsers chrome --test tests/demo-web.js --serial --strategy_bail testarmada-magellan-early-bail-strategy",
+    "test": "DPRO=local ./node_modules/.bin/magellan --local_browsers invisiblechrome --test tests/loginTest.js ",
+    "test:desktop": "DPRO=local ./node_modules/.bin/magellan --local_browsers chrome  --serial --strategy_bail testarmada-magellan-early-bail-strategy",
     "test:mobile:ios": "DPRO=local ./node_modules/.bin/magellan --local_browsers appiummweb --test tests/demo-simple.js --serial --sync_browsers safari",
     "test:mobile:android": "DPRO=local ./node_modules/.bin/magellan --local_browsers appiumandroidmweb --test tests/demo-simple.js --serial",
     "magellan:setup": "exit 0",
@@ -19,7 +19,7 @@
   "license": "MIT",
   "dependencies": {
     "appium": "^1.6.3",
-    "chromedriver": "^2.27.2",
+    "chromedriver": "^77.0.0",
     "dpro": "^1.0.0",
     "drydock": "^0.4.3",
     "geckodriver": "^1.4.0",
@@ -35,5 +35,8 @@
     "testarmada-nightwatch-extra": "^5.0.0",
     "testarmada-magellan-early-bail-strategy": "^1.0.0",
     "yargs": "1.3.2"
+  },
+  "devDependencies": {
+    "nightwatch-html-reporter": "^2.0.6"
   }
 }

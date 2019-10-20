@@ -3,6 +3,7 @@ var dpro = require("dpro");
 
 module.exports = new Test({
   tags: ["pageobject", "web"],
+  '@disabled': true,
 
   "Load demo first page": function(client) {
     var df = client.page["demo-first"]();

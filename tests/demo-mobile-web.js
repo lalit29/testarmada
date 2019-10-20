@@ -2,6 +2,7 @@ var Test = require("../lib/example-base-test-class");
 
 module.exports = new Test({
   "@tags": ["mweb"],
+  '@disabled': true,
 
   "Load goole page": function (client) {
     client

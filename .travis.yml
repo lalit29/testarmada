@@ -1,7 +1,7 @@
 language: node_js
 
 script:
-  - DPRO=local ./node_modules/.bin/magellan --sauce_create_tunnels --external_build_id=$TRAVIS_BUILD_ID --profile all --tags pageobject --max_workers=${MAGELLAN_MAX_WORKERS} --sync_browsers safari:10
+  - xvfb-run DPRO=local ./node_modules/.bin/magellan --local_browsers invisiblechrome --test tests/loginTest.js
 
 node_js:
   - v8
@@ -9,6 +9,8 @@ node_js:
   - v6
   - v5
 
+  services:
+  - xvfb
 # Use container-based Travis infrastructure.
 # See: http://docs.travis-ci.com/user/workers/container-based-infrastructure/
 sudo: false
@@ -16,6 +18,7 @@ sudo: false
 addons:
   hosts:
     - dev.walmart.com
+   chrome: stable
 
 before_install:
   # ensure latest npm installed.
@@ -26,3 +29,4 @@ before_install:
   - export SAUCE_CONNECT_VERSION=4.4.9
   - export MOCK_HOSTNAME=dev.walmart.com
   - export MAGELLAN_MAX_WORKERS=7
+  - google-chrome-stable --headless --disable-gpu --disable-extensions --remote-debugging-port=9222 http://localhost &
